@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="/dashboard">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                        <img src="https://www.bacancytechnology.com/img/b-logo-black.svg?v-1" width="207" height="50" />
                     </a>
                 </div>
 
@@ -23,7 +23,7 @@
                 <x-jet-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
-                            <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                            <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->first_name }}" />
                         </button>
                     </x-slot>
 
@@ -107,7 +107,7 @@
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                        {{ __('Logout ok') }}
+                        {{ __('Logout') }}
                     </x-jet-responsive-nav-link>
                 </form>
 
