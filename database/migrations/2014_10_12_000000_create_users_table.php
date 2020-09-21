@@ -27,6 +27,8 @@ class CreateUsersTable extends Migration
             $table->string('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
             $table->enum('login_type', ['Form', 'SSO'])->default('Form');
+            $table->timestamp('last_login_at')->nullable();
+            $table->string('last_login_ip')->nullable();
             $table->timestamps();
         });
     }

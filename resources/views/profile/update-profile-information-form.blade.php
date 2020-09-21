@@ -90,8 +90,16 @@
         <!-- Account nfo -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label value="{{ __('Account Created on') }}" />
-            <b>{{ Auth::user()->created_at }} ({{ Auth::user()->created_at->format('M d Y') }})</b>
+            <b>{{ Auth::user()->created_at }} <span class="text-sm text-gray-500">({{ Auth::user()->created_at->diffForHumans() }})</span></b>
         </div>
+
+        @if ($this->user->last_login_at)
+            <div class="col-span-6 sm:col-span-4">
+                <x-jet-label value="{{ __('Last Seen') }}" />
+                <b>{{ Auth::user()->last_login_at }} <span class="text-sm text-gray-500">({{ Auth::user()->last_login_at->diffForHumans() }})</span></b>
+            </div>
+        @endif
+        
     </x-slot>
 
     <x-slot name="actions">
