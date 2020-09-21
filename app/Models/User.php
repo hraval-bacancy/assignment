@@ -9,6 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Contracts\Encryption\DecryptException;
+use Illuminate\Support\Facades\Crypt;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -68,4 +70,44 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function getFirstNameAttribute($value) {
+        $firstName = null;
+        try {
+            $firstName = Crypt::decryptString($value);            
+        } catch (DecryptException $e) {
+            $firstName = '';
+        }
+        return $firstName;
+    }
+
+    public function getLastNameAttribute($value) {
+        $lastName = null;
+        try {
+            $lastName = Crypt::decryptString($value);            
+        } catch (DecryptException $e) {
+            $lastName = '';
+        }
+        return $lastName;
+    }
+
+    public function getPhoneAttribute($value) {
+        $phone = null;
+        try {
+            $phone = Crypt::decryptString($value);            
+        } catch (DecryptException $e) {
+            $phone = '';
+        }
+        return $phone;
+    }
+
+    public function getCompanyAttribute($value) {
+        $company = null;
+        try {
+            $company = Crypt::decryptString($value);            
+        } catch (DecryptException $e) {
+            $company = '';
+        }
+        return $company;
+    }
 }

@@ -1,3 +1,5 @@
+require('./bootstrap');
+
 document.getElementById("registerBtn").setAttribute("disabled", true);
 let privacyChk = document.getElementById("privacyPolicy");
 
