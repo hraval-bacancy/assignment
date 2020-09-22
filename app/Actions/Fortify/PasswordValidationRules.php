@@ -3,6 +3,7 @@
 namespace App\Actions\Fortify;
 
 use Laravel\Fortify\Rules\Password;
+use App\Rules\StrongPassword;
 
 trait PasswordValidationRules
 {
@@ -13,6 +14,6 @@ trait PasswordValidationRules
      */
     protected function passwordRules()
     {
-        return ['required', 'string', new Password, 'confirmed'];
+        return ['required', 'string', new StrongPassword, 'confirmed'];
     }
 }

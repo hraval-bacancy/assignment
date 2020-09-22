@@ -33,10 +33,10 @@
                 </select>
             </div>
 
-            <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="flex -mx-0 mb-6">
                 <div class="mt-4">
                     <x-jet-label value="{{ __('First Name') }}" />
-                    <x-jet-input class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" autofocus autocomplete="first_name" style="width:98%" />
+                    <x-jet-input class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" autofocus autocomplete="first_name" />
                 </div>
 
                 <div class="mt-4">
@@ -58,7 +58,7 @@
             <div class="items-center justify-end mt-4">
                 <label class="flex items-center">
                     <input class="mr-2" type="checkbox" id="privacyPolicy">
-                    <span class="xs">I have read and agree to the <a href="https://www.refineddata.com/privacy" target="_new">Terms & Conditions.</a></span>
+                    <span class="xs">I have read and agree to the <a href="https://www.refineddata.com/privacy" class="underline text-sm text-gray-600 hover:text-gray-900" target="_new">Terms & Conditions.</a></span>
                 </label>
             </div>
             <div class="flex items-center justify-end mt-4">
