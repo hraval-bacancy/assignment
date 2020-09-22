@@ -26,4 +26,4 @@
 ![Alt text](/screenshots/Profile.png?raw=true)
 
 # Database
-![Alt text](/screenshots/Database.jpg?raw=true)
+![Alt text](/screenshots/Database.JPG?raw=true)
